@@ -1,0 +1,12 @@
+:root{
+    --mainColor: #ecf0fa;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+ } 
+ 
+ html{
+     background: var(--mainColor); 
+     direction: rtl;
+ }
+ 

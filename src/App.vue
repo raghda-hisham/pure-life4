@@ -9,6 +9,14 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    scrollToTop() {
+      window.scrollToTop({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 

@@ -43,7 +43,9 @@
                 d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"
               />
             </svg>
-            <span class="side-menu__label">الرئيسية</span>
+            <router-link to="home/" class="side-menu__label"
+              >الرئيسية</router-link
+            >
           </a>
         </div>
 
@@ -194,137 +196,189 @@ export default {
         {
           title: "الاصناف",
           link: "#",
+          id: 0,
         },
         {
           title: "أرصدة المخازن",
           link: "#",
+          id: 1,
         },
         {
           title: "إتلافات",
           link: "#",
+          id: 2,
         },
         {
           title: "نواقص",
           link: "#",
+          id: 3,
         },
       ],
       empolyee: [
         {
+          name: "البيانات الأساسية",
           title: "الموظفين",
           link: "#",
+          id: 4,
         },
         {
+          title: "الموظفين",
+          link: "#",
+          id: 5,
+        },
+        {
+          title: "الموظفين",
+          link: "#",
+          id: 6,
+        },
+        {
+          name: "العملياات",
           title: " تسجيل الغياب",
           link: "#",
+          id: 7,
         },
         {
           title: "سلف المواظفين",
           link: "#",
+          id: 8,
         },
         {
           title: "الغياب",
           link: "#",
+          id: 9,
         },
       ],
-
+      empolyeeMain: [
+        {
+          title: "البيانات الأساسية",
+        },
+        {
+          title: " العمليات ",
+        },
+        {
+          title: "التقارير",
+        },
+      ],
       clients: [
         {
           title: "العملاء",
           link: "#",
+          id: 10,
         },
         {
           title: " الفواتير ",
           link: "#",
+          id: 11,
         },
         {
           title: "تحصيلات العملاء",
           link: "#",
+          id: 12,
         },
       ],
       suppliers: [
         {
           title: "المورديين",
           link: "#",
+          id: 13,
         },
         {
           title: "طلبات الشراء",
           link: "#",
+          id: 14,
         },
         {
           title: "فواتير المورديين",
           link: "#",
+          id: 15,
         },
         {
           title: "مردود مشتريات",
           link: "#",
+          id: 16,
         },
         {
           title: "سداد المورديين",
           link: "#",
+          id: 17,
         },
       ],
       asset: [
         {
           title: "المورديين",
           link: "#",
+          id: 18,
         },
         {
           title: "طلبات الشراء",
           link: "#",
+          id: 19,
         },
         {
           title: "فواتير المورديين",
           link: "#",
+          id: 20,
         },
         {
           title: "مردود مشتريات",
           link: "#",
+          id: 21,
         },
         {
           title: "سداد المورديين",
           link: "#",
+          id: 22,
         },
       ],
       money: [
         {
           title: "المورديين",
           link: "#",
+          id: 23,
         },
         {
           title: "طلبات الشراء",
           link: "#",
+          id: 24,
         },
         {
           title: "فواتير المورديين",
           link: "#",
+          id: 25,
         },
         {
           title: "مردود مشتريات",
           link: "#",
+          id: 26,
         },
         {
           title: "سداد المورديين",
           link: "#",
+          id: 27,
         },
       ],
       users: [
         {
           title: "قائمة المستخدميين",
           link: "#",
+          id: 28,
         },
         {
           title: " صلاحيات المستخدمين",
           link: "#",
+          id: 29,
         },
       ],
       settings: [
         {
           title: "السنة المالية",
           link: "#",
+          id: 30,
         },
         {
           title: " نسبة التأمينات",
           link: "#",
+          id: 31,
         },
       ],
     };

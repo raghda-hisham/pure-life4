@@ -1,11 +1,16 @@
 <template>
-  <div>
-    <side-bar-app
-      v-if="!mobile"
-      :showWidth="showWidth"
-      :class="{ toggleWidth: !showWidth }"
-    ></side-bar-app>
-    <NavApp @changeWidth="sideBarWidth" />
+  <div class="home">
+    <div class="nav-container">
+      <NavApp @changeWidth="sideBarWidth" />
+      <side-bar-app
+        v-if="!mobile"
+        :showWidth="showWidth"
+        :class="{ toggleWidth: !showWidth }"
+      ></side-bar-app>
+    </div>
+    <div class="component-container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -18,6 +23,7 @@ export default {
     NavApp,
     SideBarApp,
   },
+
   props: ["changeWidth"],
   data() {
     return {
@@ -34,18 +40,24 @@ export default {
     sideBarWidth(showWidth) {
       this.showWidth = showWidth;
     },
+
     checkScreen() {
       this.window = window.innerWidth;
 
       if (this.window <= 1000) {
         this.mobile = true;
-        console.log(this.window);
         return;
       }
       this.mobile = false;
-      console.log(this.window);
       return;
     },
   },
+  mounted() {
+    let user = localStorage.getItem("token");
+    if (!user) {
+      this.$router.push("/login");
+    }
+  },
 };
 </script>
+<style></style>

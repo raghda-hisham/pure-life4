@@ -5,7 +5,7 @@
       <div class="col-md-6 col-lg-6 col-xl-5 bg-white">
         <div class="login d-flex align-items-center">
           <!-- Demo content-->
-          <div class="container p-0">
+          <div class="container2 p-0">
             <div class="row">
               <div class="col-md-10 col-lg-10 col-xl-9 mx-auto">
                 <div class="card-sigin text-right">
@@ -124,8 +124,7 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/login", this.posts)
         .then((res) => {
-          console.log(res);
-          this.$router.push("home");
+          this.$router.push("/");
           localStorage.setItem("token", res.data.data.token);
           localStorage.setItem("name", res.data.data.name);
           localStorage.setItem("email", res.data.data.email);
@@ -136,6 +135,12 @@ export default {
           this.posts.massege = true;
         });
     },
+  },
+  mounted() {
+    let user = localStorage.getItem("token");
+    if (user) {
+      this.$router.push("/");
+    }
   },
   data() {
     return {
@@ -149,7 +154,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container-fluid {
   height: 100vh !important;
 }

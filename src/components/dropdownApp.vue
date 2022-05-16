@@ -9,11 +9,18 @@
 
   <transition name="fade" appear>
     <div class="sub-menu" v-if="isOpen">
-      <div v-for="(item, i) in items" :key="i" class="menu-item sub-menu-item">
-        <i class="fa-solid fa-angle-left"></i>
-        <router-link v-for="route in routesComp" :key="route.path" :to="route.path">
-          {{item.title}}
-        </router-link>
+      <div
+        v-for="(item, i) in items"
+        :key="i"
+        class="menu-item sub-menu-item d-flex flex-column"
+      >
+        <div class="itemName" :class="{ hide: item.name == null }">
+          {{ item.name }}
+        </div>
+        <div class="d-flex flex-row align-items-center">
+          <i class="fa-solid fa-angle-left"></i>
+          <router-link :to="`${item.id}`">{{ item.title }}</router-link>
+        </div>
       </div>
     </div>
   </transition>
@@ -22,27 +29,23 @@
 <script>
 export default {
   name: "dropdownApp",
-  props: ["title", "items"],
+  props: ["title", "items", "name"],
   data() {
     return {
       isOpen: false,
-      routes: this.$router.options.routesComp
     };
   },
 };
 </script>
 
 <style>
-.sub-menu .menu-item {
-  display: flex !important;
-  align-items: center;
+.sub-menu .menu-item div {
+  margin-right: 19px !important;
 }
-.sub-menu .menu-item i {
-  margin-right: 10px;
-}
-.sub-menu .menu-item a {
+.sub-menu .menu-item div a {
   font-size: 16px !important;
   margin-right: 5px;
+  cursor: pointer;
 }
 .sub-menu .menu-item.active,
 .sub-menu .menu-item:hover {
@@ -52,10 +55,20 @@ export default {
   margin-right: 10px;
 }
 .fa-angle-left {
-  margin-right: 25px !important;
+  margin-right: 10px !important;
   font-size: 12px;
 }
 .titleColor {
   color: #760000 !important;
+}
+.menu-item .itemName {
+  color: black !important;
+  text-align: right;
+  font-size: 16px;
+  padding: 10px;
+}
+.hide {
+  padding: 0px !important;
+  visibility: hidden !important;
 }
 </style>
